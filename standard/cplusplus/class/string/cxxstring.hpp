@@ -262,7 +262,7 @@ public:
 		if ((new_buffer == NULL) || (new_buffer == ((char *) (this->empty_string))) ||
 			(buffer_length == 0))
 		{
-			return this->__non_standard__set_new_buffer(NULL, 0, 0);
+			return this->__non_standard__set_new_buffer((char *) cxxstring::empty_string, 0, 0);
 		}
 		else
 		{
