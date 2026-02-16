@@ -12,18 +12,25 @@
 
 #include <stdio.h>
 
+#include "cxxstring.hpp"
+
 int main(void)
 {
-	std::vector<int> source = {1, 2, 3, 4, 5};
+	std::vector<cxxstring>     source       = {"this", "is", "a", "test", "sentence"};
 
 	/* Use std::move to transfer resources to 'destination' */
-	std::vector<int> destination = std::move(source);
+	std::vector<cxxstring>     destination  = std::move(source);
 
-	/* print vector value */
-	for (const int& value : destination)
+	cxxstring                  sentence;
+
+	/* add word into sentence */
+	for (const cxxstring& value : destination)
 	{
-		printf("%d\r\n", value);
+		sentence += " " + value;
 	}
+
+	/* print sentence */
+	printf("%s\r\n", sentence.c_str());
 
 	return 0;
 }
