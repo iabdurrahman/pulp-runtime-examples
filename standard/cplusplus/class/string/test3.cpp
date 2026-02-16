@@ -13,14 +13,14 @@
 
 int main(void)
 {
-	cxxstring init1 = new cxxstring;
-	cxxstring init2 = new cxxstring("test dynamic init2");
-	cxxstring init3 = new cxxstring(init2);
+	cxxstring *init1 = new cxxstring;
+	cxxstring *init2 = new cxxstring("test dynamic init2");
+	cxxstring *init3 = new cxxstring(*init2);
 
 	/* print sentence */
-	printf("init1: %s\r\n", init1.c_str());
-	printf("init2: %s\r\n", init2.c_str());
-	printf("init3: %s\r\n", init3.c_str());
+	printf("init1: %s\r\n", init1->c_str());
+	printf("init2: %s\r\n", init2->c_str());
+	printf("init3: %s\r\n", init3->c_str());
 
 	delete init1;
 	delete init2;
