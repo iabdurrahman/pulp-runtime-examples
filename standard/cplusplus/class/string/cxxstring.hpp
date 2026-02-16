@@ -72,7 +72,9 @@ public:
 	cxxstring(void);
 	cxxstring(const char *str);
 	cxxstring(const cxxstring   &rvalue);
+#if (__cplusplus >= 201103L)
 	cxxstring(cxxstring        &&rvalue);
+#endif
 
 	/* destructor */
 	~cxxstring(void);
@@ -230,6 +232,7 @@ public:
 	}
 
 	/* with move semantic */
+#if (__cplusplus >= 201103L)
 	inline cxxstring operator+(cxxstring &&rhs) const
 	{
 		/*cxxstring cxxstring_rhs(rhs);*/
@@ -238,6 +241,7 @@ public:
 		/* reuse + operator for string */
 		return (lhs += rhs);
 	}
+#endif
 
 	/* with string */
 	inline cxxstring operator+(const char *rhs) const

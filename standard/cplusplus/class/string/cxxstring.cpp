@@ -70,7 +70,7 @@ cxxstring::cxxstring(const cxxstring  &s)
 			new_string = (char *) malloc((rvalue_string_length + 1) * sizeof(char));
 			if (new_string == NULL)
 			{
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 				/* unhandled exception, terminate */
 				std::terminate(); /* this function is non-return function */
 #else
@@ -133,7 +133,7 @@ cxxstring::cxxstring(const char   *s)
 		new_string = (char *) malloc(buffer_length * sizeof(char));
 		if (new_string == NULL)
 		{
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 			/* unhandled exception, terminate */
 			std::terminate(); /* this function is non-return function */
 #else
@@ -236,7 +236,7 @@ cxxstring &cxxstring::operator=(const cxxstring   &rvalue)
 				new_string = (char *) malloc((rvalue_string_length + 1) * sizeof(char));
 				if (new_string == NULL)
 				{
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 					/* unhandled exception, terminate */
 					std::terminate(); /* this function is non-return function */
 #else
@@ -271,7 +271,7 @@ cxxstring &cxxstring::operator=(const cxxstring   &rvalue)
 					new_string = (char *) realloc(lvalue_c_buf, (rvalue_string_length + 1) * sizeof(char));
 					if (new_string == NULL)
 					{
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 						/* unhandled exception, terminate */
 						std::terminate(); /* this function is non-return function */
 #else
@@ -367,7 +367,7 @@ cxxstring &cxxstring::operator=(const char        *rvalue)
 		s = (char *) malloc(rvalue_buffer_length * sizeof(char));
 		if (s == NULL)
 		{
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 			/* unhandled exception, terminate */
 			std::terminate(); /* this function is non-return function */
 #else
@@ -480,7 +480,7 @@ cxxstring &cxxstring::operator+=(const cxxstring &rvalue)
 					* depend on config, we can recover from this error by
 					* don't modify current string
 					*/
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 				/* unhandled exception, terminate */
 				std::terminate(); /* this function is non-return function */
 #else
@@ -590,7 +590,7 @@ cxxstring &cxxstring::operator+=(const cxxstring &rvalue)
 					{
 						/* even with smaller buffer we cannot reserve heap,
 						* just terminate */
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 						/* unhandled exception, terminate */
 						std::terminate(); /* this function is non-return function */
 #else
@@ -648,7 +648,7 @@ cxxstring &cxxstring::operator+=(const cxxstring &rvalue)
 					{
 						/* even with smaller buffer we cannot reserve heap,
 						* just terminate */
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 						/* unhandled exception, terminate */
 						std::terminate(); /* this function is non-return function */
 #else
@@ -857,7 +857,7 @@ cxxstring &cxxstring::operator+=(cxxstring &&rvalue)
 					{
 						/* even with smaller buffer we cannot reserve heap,
 						* just terminate */
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 						/* unhandled exception, terminate */
 						std::terminate(); /* this function is non-return function */
 #else
@@ -914,7 +914,7 @@ cxxstring &cxxstring::operator+=(cxxstring &&rvalue)
 					{
 						/* even with smaller buffer we cannot reserve heap,
 						* just terminate */
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 						/* unhandled exception, terminate */
 						std::terminate(); /* this function is non-return function */
 #else
@@ -1025,7 +1025,7 @@ cxxstring &cxxstring::operator+=(const char *rvalue)
 		{
 			/* failed to allocate buffer */
 
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 			/* unhandled exception, terminate */
 			std::terminate(); /* this function is non-return function */
 #else
@@ -1115,7 +1115,7 @@ cxxstring &cxxstring::operator+=(const char *rvalue)
 					{
 						/* even with smaller buffer we cannot reserve heap,
 						* just terminate */
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 						/* unhandled exception, terminate */
 						std::terminate(); /* this function is non-return function */
 #else
@@ -1172,7 +1172,7 @@ cxxstring &cxxstring::operator+=(const char *rvalue)
 					{
 						/* even with smaller buffer we cannot reserve heap,
 						* just terminate */
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 						/* unhandled exception, terminate */
 						std::terminate(); /* this function is non-return function */
 #else
@@ -1395,7 +1395,7 @@ cxxstring operator+(cxxstring &&lhs, cxxstring rhs)
 				{
 					/* even with smaller buffer we cannot reserve heap,
 					* just terminate */
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 					/* unhandled exception, terminate */
 					std::terminate(); /* this function is non-return function */
 #else
@@ -1534,7 +1534,7 @@ cxxstring operator+(const char *lhs, cxxstring         _rhs)
 		{
 			/* failed to allocate buffer */
 
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 			/* unhandled exception, terminate */
 			std::terminate(); /* this function is non-return function */
 #else
@@ -1625,7 +1625,7 @@ cxxstring operator+(const char *lhs, cxxstring         _rhs)
 					{
 						/* even with smaller buffer we cannot reserve heap,
 						* just terminate */
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 						/* unhandled exception, terminate */
 						std::terminate(); /* this function is non-return function */
 #else
@@ -1682,7 +1682,7 @@ cxxstring operator+(const char *lhs, cxxstring         _rhs)
 					{
 						/* even with smaller buffer we cannot reserve heap,
 						* just terminate */
-#if ((CXXSTRING_CONF_OPERATOR_OVERLOADING_ABORT_ON_ALLOC_FAIL) != 0)
+#if ((CXXSTRING_CONF_ABORT_ON_ALLOC_FAIL) != 0)
 						/* unhandled exception, terminate */
 						std::terminate(); /* this function is non-return function */
 #else
