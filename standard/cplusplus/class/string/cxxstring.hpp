@@ -15,18 +15,22 @@
 	*/
 #include "config_cxxstring.h"
 
+/**
+	* assert
+	*/
+#include "assert_helper.h"
+
 /* standard header c */
-#include <string.h> /* strlen, etc. */
+#include <string.h> /* strlen, memcpy, memmove etc. */
 #include <stdlib.h> /* alloc related functions */
 
 /* standard header c++ */
 #include <exception> /* for std::terminate */
 
 /* local header */
-#include "assert_helper.h"
 
 
-
+/* forward declare class */
 class cxxstring;
 
 

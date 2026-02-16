@@ -7,6 +7,24 @@
 	* NONINFRINGEMENT.
 	*/
 
+/**
+	* configuration
+	*/
+#include "config_cxxstring.h"
+
+/**
+	* assert
+	*/
+#include "assert_helper.h"
+
+/* standard header c */
+#include <string.h> /* strlen, memcpy, memmove etc. */
+#include <stdlib.h> /* alloc related functions */
+
+/* standard header c++ */
+#include <exception> /* for std::terminate */
+
+/* local header */
 #include "cxxstring.hpp"
 
 /**
@@ -134,6 +152,7 @@ cxxstring::cxxstring(const char   *s)
 
 
 /* destructor */
+
 cxxstring::~cxxstring(void)
 {
 	this->__non_standard__free_string_non_invalidate();

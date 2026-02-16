@@ -10,7 +10,11 @@
 #ifndef __ASSERT_HELPER_H__
 #define __ASSERT_HELPER_H__
 
+#if (! ((defined(NDEBUG)) || (defined(__riscv__))))
 #include <assert.h>
+#endif
+
+
 
 #if ((defined(NDEBUG)) || (defined(__riscv__)))
 #define      _ASSERT(a)
